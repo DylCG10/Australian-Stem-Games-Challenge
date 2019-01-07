@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -440,7 +440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298540618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.101, z: 0.878}
+  m_LocalPosition: {x: -0, y: 0.001, z: 0.878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1843211669}
@@ -519,6 +519,42 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f38ed548b13990d48bbf5648fdeb9470, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7172c1b94e6462341b3e5d0423732c94, type: 3}
+--- !u!1 &681142920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6425363817807651205, guid: df5b0de3911202442a95bfef5fa7bd39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1448817235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &681142923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681142920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 0.05
+  aperture: 0
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: 0.5
+  dx11SpawnHeuristic: 0.0875
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.2
+  dx11BokehIntensity: 2.5
 --- !u!1001 &1353384580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -939,14 +975,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6455c446f1640cf4c90ae467bdedcbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motor: {fileID: 1613447555}
   grab: 0
   inspectionPos: {fileID: 298540619}
-  motor: {fileID: 1613447555}
-  item: {fileID: 0}
   cam: {fileID: 1843211668}
+  canvas: {fileID: 1811947462}
   force: 250
   playerImpactingForce: 25.86
-  originalPos: {x: 0, y: 0, z: 0}
+  rotSpeed: 250
 --- !u!1 &1811947459
 GameObject:
   m_ObjectHideFlags: 0
