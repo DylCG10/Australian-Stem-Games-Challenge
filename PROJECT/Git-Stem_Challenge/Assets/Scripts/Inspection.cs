@@ -9,6 +9,8 @@ public class Inspection : MonoBehaviour
     public bool grab = false;
 
     public Transform inspectionPos;
+    public CharacterMotor motor;
+
     public GameObject item;
     public Camera cam;
 
@@ -80,7 +82,7 @@ public class Inspection : MonoBehaviour
                     }
                     if (item.transform.tag == "Item")
                     {
-                        item.GetComponent<Rigidbody>().AddForce(cam.transform.forward * force);
+                        item.GetComponent<Rigidbody>().AddForce(cam.transform.forward * force + motor.rBody.velocity);
 
                     }
                 }
