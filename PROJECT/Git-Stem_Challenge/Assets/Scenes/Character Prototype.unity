@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: isUnderControl
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5225352867189268549, guid: 9fd7bba185310a54fbbf5f7e4a6baad3,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5225352867189268571, guid: 9fd7bba185310a54fbbf5f7e4a6baad3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9fd7bba185310a54fbbf5f7e4a6baad3, type: 3}
@@ -940,6 +945,7 @@ MonoBehaviour:
   item: {fileID: 0}
   cam: {fileID: 1843211668}
   force: 250
+  playerImpactingForce: 25.86
   originalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1811947459
 GameObject:

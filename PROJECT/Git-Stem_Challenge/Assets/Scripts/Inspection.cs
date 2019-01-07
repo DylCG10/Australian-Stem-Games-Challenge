@@ -17,6 +17,7 @@ public class Inspection : MonoBehaviour
     float startTime = 0;
     float waitTime = 0.5f;
     public float force = 10f;
+    public float playerImpactingForce = 4f;
 
     public Vector3 originalPos = new Vector3(0, 0, 0);
 
@@ -82,7 +83,7 @@ public class Inspection : MonoBehaviour
                     }
                     if (item.transform.tag == "Item")
                     {
-                        item.GetComponent<Rigidbody>().AddForce(cam.transform.forward * force + motor.rBody.velocity);
+                        item.GetComponent<Rigidbody>().AddForce(cam.transform.forward * force + motor.rBody.velocity*playerImpactingForce);
 
                     }
                 }
