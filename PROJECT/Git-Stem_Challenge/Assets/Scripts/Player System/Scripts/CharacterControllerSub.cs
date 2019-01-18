@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterControllerSub : MonoBehaviour
 {
     public CharacterMotor motor;
-
+    
     [Header("Speeds")]
     public float movementSpeed;
     public float gravityPower;
