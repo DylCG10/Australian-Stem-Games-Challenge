@@ -118,6 +118,8 @@ public class Inspection : MonoBehaviour
 
             if (Input.GetMouseButton(0) && item.transform.tag == "Item 2")
             {
+                Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.Confined;
                 float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
                 float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
 
