@@ -30,36 +30,6 @@ Transform:
   m_Father: {fileID: 6425363817074135095}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &681142923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6425363817074135080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visualizeFocus: 0
-  focalLength: 10
-  focalSize: 0.05
-  aperture: 0
-  focalTransform: {fileID: 0}
-  maxBlurSize: 2
-  highResolution: 0
-  blurType: 0
-  blurSampleCount: 2
-  nearBlur: 0
-  foregroundOverlap: 1
-  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
-  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
-  dx11BokehThreshold: 0.5
-  dx11SpawnHeuristic: 0.0875
-  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
-  dx11BokehScale: 1.2
-  dx11BokehIntensity: 2.5
 --- !u!1 &1613447551
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +47,7 @@ GameObject:
   - component: {fileID: 7089313122990572457}
   - component: {fileID: 1613447553}
   - component: {fileID: 1613447556}
+  - component: {fileID: 700813468}
   m_Layer: 9
   m_Name: Capsule
   m_TagString: Player
@@ -91,7 +62,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613447551}
-  m_LocalRotation: {x: -0, y: -0.1328475, z: -0, w: 0.9911365}
+  m_LocalRotation: {x: 0, y: -0.1328445, z: 0, w: 0.9911369}
   m_LocalPosition: {x: -2.77, y: 5.39, z: -4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -286,6 +257,53 @@ MonoBehaviour:
   force: 250
   playerImpactingForce: 25.86
   rotSpeed: 250
+--- !u!114 &700813468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613447551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bf1e2f6b669bb49bccf0a0325470e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6425363817074135094}
+  canvas: {fileID: 0}
+  hackingPos: {fileID: 0}
+  compTerminal: {fileID: 0}
+  isHacking: 0
+--- !u!114 &681142923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6425363817074135080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 0.05
+  aperture: 0
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: 0.5
+  dx11SpawnHeuristic: 0.0875
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.2
+  dx11BokehIntensity: 2.5
 --- !u!1001 &1414050221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,6 +315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425363817807651227, guid: df5b0de3911202442a95bfef5fa7bd39,
+        type: 3}
+      propertyPath: field of view
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6425363817807651226, guid: df5b0de3911202442a95bfef5fa7bd39,
         type: 3}
@@ -353,21 +376,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6425363817807651226, guid: df5b0de3911202442a95bfef5fa7bd39,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425363817807651226, guid: df5b0de3911202442a95bfef5fa7bd39,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425363817807651227, guid: df5b0de3911202442a95bfef5fa7bd39,
-        type: 3}
-      propertyPath: field of view
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 6425363817807651225, guid: df5b0de3911202442a95bfef5fa7bd39,
         type: 3}
       propertyPath: playerTarget
@@ -380,23 +388,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425363817807651225, guid: df5b0de3911202442a95bfef5fa7bd39,
         type: 3}
-      propertyPath: cameraIsFPS
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425363817807651225, guid: df5b0de3911202442a95bfef5fa7bd39,
-        type: 3}
-      propertyPath: cameraSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425363817807651225, guid: df5b0de3911202442a95bfef5fa7bd39,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425363817807651225, guid: df5b0de3911202442a95bfef5fa7bd39,
-        type: 3}
       propertyPath: rotationSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425363817807651225, guid: df5b0de3911202442a95bfef5fa7bd39,
+        type: 3}
+      propertyPath: cameraIsFPS
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6425363817766809927, guid: df5b0de3911202442a95bfef5fa7bd39,
         type: 3}

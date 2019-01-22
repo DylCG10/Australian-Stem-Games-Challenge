@@ -65,10 +65,10 @@ public class Inspection : MonoBehaviour
         {
             item.GetComponent<Rigidbody>().useGravity = false;
             item.GetComponent<Rigidbody>().isKinematic = true;
+            item.GetComponent<Rigidbody>().detectCollisions = false;
 
             item.transform.SetParent(inspectionPos);
             item.transform.localPosition = new Vector3(0, 0, 0);
-            item.GetComponent<Rigidbody>().detectCollisions = false;
 
             if (item.transform.tag == "Item 2")
             {
@@ -80,40 +80,38 @@ public class Inspection : MonoBehaviour
                 DOF.aperture = 0.6f;
             }
 
-            if (Time.time - startTime > waitTime)
+            if (Time.time - startTime > waitTime && Input.GetKeyDown(KeyCode.F))
             {
-                if (Input.GetKeyDown(KeyCode.F))
+               
+                item.GetComponent<Rigidbody>().detectCollisions = true;
+                item.GetComponent<Rigidbody>().isKinematic = false;
+                item.GetComponent<Rigidbody>().useGravity = true;
+
+                item.transform.parent = null;
+                grab = false;
+
+                if (item.transform.tag == "Item 2")
                 {
-                    item.GetComponent<Rigidbody>().detectCollisions = true;
-                    item.transform.parent = null;
-                    grab = false;
+                    item.transform.rotation = originalRot;
+                    item.transform.position = originalPos; //snap item back to original position
+                    charContr.movementSpeed = 6;
+                    orbitContr.enabled = true;
+                    cam.fieldOfView = 70;
+                    DOF.focalTransform = null;
+                    DOF.aperture = 0f;
 
-                    item.GetComponent<Rigidbody>().isKinematic = false;
-                    item.GetComponent<Rigidbody>().useGravity = true;
-
-                    if (item.transform.tag == "Item 2")
-                    {
-                        item.transform.rotation = originalRot;
-                        item.transform.position = originalPos; //snap item back to original position
-                        charContr.movementSpeed = 6;
-                        orbitContr.enabled = true;
-                        cam.fieldOfView = 70;
-                        DOF.focalTransform = null;
-                        DOF.aperture = 0f;
-
-                        Cursor.visible = false;
-                        Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                         
-                    }
-
-                    if (item.transform.tag == "Item")
-                    {
-                        item.GetComponent<Rigidbody>().AddForce(cam.transform.forward * force + motor.rBody.velocity*playerImpactingForce);
-
-                    }
-
-                    canvas.enabled = true;
                 }
+
+                if (item.transform.tag == "Item")
+                {
+                    item.GetComponent<Rigidbody>().AddForce(cam.transform.forward * force + motor.rBody.velocity*playerImpactingForce);
+
+                }
+
+                canvas.enabled = true;
             }
 
             if (Input.GetMouseButton(0) && item.transform.tag == "Item 2")
