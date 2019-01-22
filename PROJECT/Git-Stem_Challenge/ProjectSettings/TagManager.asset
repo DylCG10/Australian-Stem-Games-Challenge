@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item 2
   - Item
+  - Computer
   layers:
   - Default
   - TransparentFX
